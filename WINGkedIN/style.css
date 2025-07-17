@@ -1,0 +1,61 @@
+@font-face {
+     font-family: 'DungGeunMo';
+     src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff') format('woff');
+     font-weight: normal;
+     font-style: normal;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url("images/9bc6377ffc20479014558ed1580f3982.png");
+  background-size: cover;
+  background-repeat: repeat;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  width: 50%;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+  padding: 250px;
+  padding-left: 500px;
+}
+.Search {
+  font-family: DungGeunMo,  sans-serif;
+}
+.custom-modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background: rgba(0, 0, 0, 0.164);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1050;
+}
+.modal-body {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+}
+.btn-close-modal {
+  margin-top: 20px;
+  background-color: #c44;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
