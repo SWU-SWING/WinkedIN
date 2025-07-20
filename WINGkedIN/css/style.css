@@ -25,11 +25,14 @@ body {
   background-color: transparent;
   padding: 0;
 }
+.gradient-main {
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.97));
+}
 .container {
   width: 50%;
   height: 100%;
-  background-color: rgba(255, 255, 255, 0.962);
-  padding: 250px;
+  background-color: rgba(255, 255, 255, 0.97);
+  padding: 100px;
 }
 .Search {
   font-family: DungGeunMo,  sans-serif;
