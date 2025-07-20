@@ -6,7 +6,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const openButtons = document.querySelectorAll('.btn-open-modal');
 
   openButtons.forEach(button => {
-    button.addEventListener('click', () => {
+    button.addEventListener('click', (e) => {
+      if (e.target.closest('.no-modal')) return;
       const url = button.getAttribute('data-url');
       modal.style.display = 'block';
       isOpen = true;
