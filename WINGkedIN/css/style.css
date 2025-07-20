@@ -66,11 +66,9 @@ body {
   text-align: center;
 }
 .btn-close-modal {
-  margin-top: 20px;
-  background-color: #c44;
-  color: white;
+  background-color: rgba(255, 255, 255, 0);
+  color: rgb(0, 0, 0);
   border: none;
-  padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
 }

@@ -59,7 +59,7 @@
             <button class="btn btn-outline-dark btn-open-modal w-100 py-5" data-url="modal/modaltest2.html">31기 함은지</button>
           </div>
           <div class="col" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
-            <div class="custom-card btn-open-modal" data-url="modal/modaltest3.html">
+            <div class="custom-card btn-open-modal modal-dialog-scrollabl" data-url="modal/modaltest3.html">
               <div class="card-body text-start" style="font-family: pretendard;">
                 <h5><span class="highlight">황선영</span> 님의 정보</h5>
                 <p class="subtitle">31st | @SFicheu 
@@ -125,10 +125,10 @@
           </div>
         </div>
       </div>
-      <div class="custom-modal" id="customModal">
-        <div class="modal-body" style="padding-top: 30px; padding-bottom: 30px; border-color: black;" id="modalBody">
-          <div id="modal-content-area">불러오는 중...</div>
-          <button class="btn-close-modal">닫기</button>
+      <div class="custom-modal" style="padding-top: 30px;" id="customModal">
+        <div class="modal-body" style="max-width: 80%; max-height: 85vh; padding-top: 30px; padding-bottom: 30px; border-color: black;" id="modalBody">
+          <div id="modal-content-area" style="max-height: 80vh; overflow-y: auto;">불러오는 중...</div>
+          <button class="btn-close-modal" style="position: absolute; top: 5px; right: 5px;"><i class="bi bi-x"></i></button>
         </div>
       </div>
     </div>
