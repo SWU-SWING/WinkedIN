@@ -8,7 +8,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-image: url("../images/9bc6377ffc20479014558ed1580f3982.png");
+  background-image: url("../images/background.svg");
   background-size: cover;
   background-repeat: repeat;
   background-position: center;
@@ -16,6 +16,7 @@ body {
   justify-content: center;
   align-items: center;
 }
+/* 기본 레이아웃 */
 .container-main {
   width: 100%;
   height: 100vh;
@@ -24,6 +25,7 @@ body {
   align-items: center;
   background-color: transparent;
 }
+
 .gradient-main {
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.97));
   padding: 100px;
@@ -32,15 +34,20 @@ body {
   margin: 0 auto;
   box-sizing: border-box;
 }
+
 .container {
   width: 100%;
   height: 100%;
   background-color: rgba(255, 255, 255, 0.97);
   padding: 100px;
 }
+
+/* 검색 폰트 */
 .Search {
-  font-family: DungGeunMo,  sans-serif;
+  font-family: DungGeunMo, sans-serif;
 }
+
+/* 모달 */
 .custom-modal {
   position: fixed;
   top: 0;
@@ -54,6 +61,7 @@ body {
   align-items: center;
   z-index: 9999;
 }
+
 #modalBody {
   position: relative;
   background: white;
@@ -61,64 +69,98 @@ body {
   overflow: hidden;
   border-radius: 15px;
 }
+
 .modal-body {
   position: fixed;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
   width: 500px;
+  height: 400px;
+  max-height: 80vh;
   background: white;
-  padding: 30px;
+  padding: 24px;
   border-radius: 10px;
   text-align: center;
+  overflow-y: auto;
 }
+
 #modal-content-area {
   padding-left: 30px;
   padding-right: 30px;
 }
+
 .btn-close-modal {
   background-color: rgba(255, 255, 255, 0);
   color: rgb(0, 0, 0);
   border: none;
   border-radius: 5px;
-  cursor: pointer;
 }
+
+/* 카드 */
 .custom-card {
-  background-color: #ffffff;
-  border-radius: 12px;
-  border: 2px solid #ccc;
-  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  overflow: hidden;
   position: relative;
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
-  box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+}
+
+.custom-card .card-body {
+  position: relative;
+  z-index: 2; /* ground 위로 올라오게 */
+  background: transparent;
+  padding: 5px;
+  padding-left: 20px;
+  font-size: clamp(12px, 1.5vw, 16px);
+  width: 100%;
+}
+
+.custom-card .ground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  object-fit: contain; /* 비율 유지 */
+  z-index: 1;           /* 배경 레이어로 */
+  pointer-events: none;
 }
 
 .custom-card:hover {
-  transform: scale(1.02);
+  transform: scale(1.01);
 }
+
 
 .custom-card .highlight {
   color: goldenrod;
   font-weight: bold;
+  padding-left: 10px;
 }
 
 .custom-card .subtitle {
   color: gray;
-  font-size: 14px;
+  font-size: 0.9em;
+  padding-left: 10px;
 }
 
 .custom-card .skills {
   margin-top: 10px;
-  font-size: 16px;
+  font-size: 0.95em;
+  padding-left: 15px;
 }
 
 .progress-bar {
-  width: 100%;
+  width: 80%;
   height: 10px;
   background-color: #ddd;
   border-radius: 5px;
-  margin-top: 10px;
+  margin-top: 5px;
+  padding-left: 10px;
 }
 
 .progress-fill {
@@ -127,19 +169,50 @@ body {
   border-radius: 5px;
 }
 
-.custom-card .character {
-  position: absolute;
-  right: 10px;
-  bottom: auto;
-  top: 10px;              /* ← 위로 올리기 */
-  height: 130px;
-}
+/* 이모지 */
 .emogi-icon {
   width: 20px;
 }
-.ground {
-  width: 100%;
-}
+
 .character {
   margin-bottom: 50px;
 }
+
+/* ------------------------ */
+/* ✅ 반응형 미디어 쿼리 추가 */
+/* ------------------------ */
+
+@media screen and (max-width: 1000px) {
+  .custom-card .card-body {
+    padding: 16px;
+    font-size: 1.1em;
+    padding-top: 40px;
+  }
+
+  .custom-card .skills {
+    display: none;
+  }
+
+  .custom-card .btn {
+    font-size: 12px;
+    padding: 4px 6px;
+    display: none;
+  }
+
+  .custom-card .progress-bar {
+    display: none;
+  }
+
+  .custom-card .highlight {
+    color: goldenrod;
+    font-weight: bold;
+    padding-left: 20px;
+  }
+
+  .custom-card .subtitle {
+    color: gray;
+    font-size: 0.9em;
+    padding-left: 20px;
+  }
+}
+
