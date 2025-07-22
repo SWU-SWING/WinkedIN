@@ -170,11 +170,8 @@ body {
   margin-bottom: 50px;
 }
 
-/* ------------------------ */
-/* ✅ 반응형 미디어 쿼리 추가 */
-/* ------------------------ */
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1370px) {
   .custom-card .card-body {
     padding: 16px;
     font-size: 1.1em;
