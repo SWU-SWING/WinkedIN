@@ -8,10 +8,10 @@
 body {
   margin: 0;
   padding: 0;
-  background-image: url("../images/background.svg");
-  background-size: cover;
-  background-repeat: repeat;
-  background-position: center;
+  background-image: url("../images/backgroundmodal.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: top center;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -203,6 +203,9 @@ body {
     font-size: 0.9em;
     padding-left: 20px;
   }
+  .healthbar{
+    display: none;
+  }
 }
 
 .layout-2col {
@@ -269,4 +272,93 @@ body {
 .file-link-modal {
   color: royalblue;
   font-size: 14px;
+}
+
+
+:root {
+  --bar-fill: goldenrod;
+  --bar-top: goldenrod;
+  --pixel-size: 2; /* or adjust as needed */
+}
+
+.healthbar {
+  padding-left: 10px;
+  width: calc(70px * var(--pixel-size));
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.healthbar_fill {
+  fill: var(--bar-fill);
+  transition: width 0.1s ease-in, fill 0.2s linear;
+}
+
+.healthbar_fill-top {
+  fill: var(--bar-top);
+}
+
+.status-container {
+    margin: 15px 0;
+}
+
+.status-bar {
+    width: 50%;
+    height: 10px;
+    background: #333;
+    border: 2px solid #666;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 3px;
+}
+
+.status-bar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(
+        90deg,
+        transparent 0px,
+        transparent 8px,
+        rgba(255, 255, 255, 0.1) 8px,
+        rgba(255, 255, 255, 0.1) 10px
+    );
+    z-index: 2;
+}
+
+.hp-bar {
+    background: linear-gradient(180deg, goldenrod 0%, rgb(197, 149, 29) 50%, rgb(229, 181, 59) 100%);
+    height: 100%;
+    transition: width 1s ease-out;
+    position: relative;
+    border-right: 2px solid goldenrod;
+}
+
+.mp-bar {
+    background: linear-gradient(180deg, #4444ff 0%, #2222cc 50%, #4444ff 100%);
+    height: 100%;
+    transition: width 1s ease-out;
+    position: relative;
+    border-right: 2px solid #000099;
+}
+
+.exp-bar {
+    background: linear-gradient(180deg, #ffaa00 0%, #cc8800 50%, #ffaa00 100%);
+    height: 100%;
+    transition: width 1s ease-out;
+    position: relative;
+    border-right: 2px solid #996600;
+}
+
+.bar-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.4) 0%, transparent 100%);
 }
