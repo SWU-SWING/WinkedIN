@@ -59,7 +59,7 @@ body {
   display: none;
   justify-content: center;
   align-items: center;
-  z-index: 9999;
+  z-index: 12;
 }
 
 #modalBody {
@@ -274,59 +274,91 @@ body {
 }
 
 
-:root {
-  --bar-fill: goldenrod;
-  --bar-top: goldenrod;
-  --pixel-size: 2; /* or adjust as needed */
-}
-
-.healthbar {
-  padding-left: 10px;
-  width: calc(70px * var(--pixel-size));
-  display: block;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-.healthbar_fill {
-  fill: var(--bar-fill);
-  transition: width 0.1s ease-in, fill 0.2s linear;
-}
-
-.healthbar_fill-top {
-  fill: var(--bar-top);
-}
-
 .status-container {
-  margin: 15px 0;
+  margin: 10px 12px;
+  display: flex;
+  gap: 2px;
+  align-items: center;
+  flex-wrap: nowrap;
+  width: 120px;
+  position: relative;
+  z-index: 13;
 }
 
 .status-bar {
-  display: flex;
-  width: 50%;
-  height: 10px;
-  background: #333;
-  border: 2px solid #666;
+  display: inline-block;
+  height: 6px;
+  border-radius: 20px;
+  cursor: pointer;
   position: relative;
-  overflow: hidden;
-  margin-bottom: 3px;
+  z-index: 14;
+  pointer-events: auto;
 }
 
-.status-bar::before {
+.status-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+/* 툴팁 컨테이너 */
+.tooltip {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #5e5e5e;
+  color: #ffffff;
+  padding: 8px;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px -7px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  z-index: 9999;
+  white-space: nowrap;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 80px;
+}
+
+/* 툴팁 이미지 */
+.tooltip-img {
+  width: 16px;
+  height: 16px;
+  border-radius: 2px;
+  object-fit: cover;
+}
+
+/* 툴팁 텍스트 */
+.tooltip-text {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* 툴팁 화살표 */
+.tooltip::after {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: repeating-linear-gradient(
-    90deg,
-    transparent 0px,
-    transparent 8px,
-    rgba(255, 255, 255, 0.1) 8px,
-    rgba(255, 255, 255, 0.1) 10px
-  );
-  z-index: 2;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: #5e5e5e;
+}
+
+/* 마우스오버 시 툴팁 표시 */
+.status-bar:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* 디버깅용 - 마우스오버 시 이미지 색상 변경으로 호버 작동 확인 */
+.status-bar:hover .status-img {
+  filter: brightness(1.3);
 }
 
 .hp-bar {
