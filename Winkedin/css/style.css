@@ -48,11 +48,6 @@ body {
 }
 
 /* 모달 */
-<script type="module">
-    import { animate } from "https://cdn.jsdelivr.net/npm/motion@12.23.0/+esm"
-
-    animate(".box", { scale: 1 }, { ease: "circInOut", duration: 1 })
-</script>
 .custom-modal {
   position: fixed;
   top: 0;
@@ -65,7 +60,6 @@ body {
   justify-content: center;
   align-items: center;
   z-index: 9999;
-  transform: scale(0.4);
 }
 
 #modalBody {
