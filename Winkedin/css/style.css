@@ -146,6 +146,62 @@ body {
   padding-left: 15px;
 }
 
+.custom-card2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.custom-card2 .card-body {
+  position: relative;
+  z-index: 2; /* ground 위로 올라오게 */
+  background: transparent;
+  padding: 5px;
+  padding-left: 20px;
+  font-size: clamp(12px, 1.5vw, 16px);
+  width: 100%;
+  height: 150px;
+}
+
+.custom-card2 .ground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  object-fit: contain; /* 비율 유지 */
+  z-index: 1;           /* 배경 레이어로 */
+  pointer-events: none;
+}
+
+.custom-card2:hover {
+  transform: scale(1.01);
+}
+
+.custom-card2 .highlight {
+  color: goldenrod;
+  font-weight: bold;
+  padding-left: 10px;
+}
+
+.custom-card2 .subtitle {
+  color: gray;
+  font-size: 0.9em;
+  padding-left: 10px;
+}
+
+.custom-card2 .skills {
+  margin-top: 10px;
+  font-size: 0.95em;
+  padding-left: 15px;
+}
+
 .progress-bar {
   width: 80%;
   height: 10px;
@@ -193,7 +249,7 @@ body {
   }
 
   .custom-card .highlight {
-    color: goldenrod;
+    color: #5e749e;
     font-weight: bold;
     padding-left: 20px;
   }
