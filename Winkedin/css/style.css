@@ -602,6 +602,8 @@ body {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
+  max-width: 320px;
+  padding-left: 15px;
 }
 
 .modal-guild {
