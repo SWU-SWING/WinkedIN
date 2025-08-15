@@ -387,7 +387,7 @@ body {
   display: flex;
   align-items: center;
   gap: 6px;
-  max-width: 200px; 
+  max-width: 250px; 
   width: max-content; 
   white-space: normal; 
   line-height: 1.4;
